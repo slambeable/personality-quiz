@@ -40,13 +40,13 @@ class ResultViewController: UIViewController {
             answerCounters.updateValue(answerCounters[$0.animal]! + 1, forKey: $0.animal)
         }
         
-        return answerCounters.max(by: { $0.value < $1.value })?.key ?? .dog
+        return answerCounters.max { $0.value < $1.value }?.key ?? .dog
     }
 }
 
 extension ResultViewController {
     private func updateUI(for frequentAnswer: Animal) {
-        titleLabel.text = "Вы - \(frequentAnswer.rawValue)"
+        titleLabel.text = "Вы - \(frequentAnswer.rawValue)!"
         descriptionLabel.text = frequentAnswer.definition
     }
 }
