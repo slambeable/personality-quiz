@@ -18,17 +18,17 @@ class ResultViewController: UIViewController {
     
     var answersChosen: [Answer]!
 
-    private var answerCounters = [
-        Animal.dog: 0,
-        Animal.cat: 0,
-        Animal.rabbit: 0,
-        Animal.turtle: 0,
+    private var answerCounters: [Animal: Int] = [
+        .dog: 0,
+        .cat: 0,
+        .rabbit: 0,
+        .turtle: 0,
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.setHidesBackButton(true, animated: false)
         
         let frequentAnswer = choseFrequentAnswer()
 
